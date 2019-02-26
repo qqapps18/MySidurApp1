@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/colordefondo"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="app.production.samipc.mysidurapp1.SeleccionModo"
+    tools:showIn="@layout/activity_seleccion_modo">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imagensidur" />
+
+    <TextView
+        android:id="@+id/fechahoyview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/botontransliteral"
+        android:layout_alignStart="@+id/botonhebreo"
+        android:layout_alignLeft="@+id/botonhebreo"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/la_hora_es"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/yomview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/yomview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fechahoyview"
+        android:layout_alignEnd="@+id/botonhebreo"
+        android:layout_alignRight="@+id/botonhebreo"
+        android:layout_alignBottom="@+id/fechahoyview"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="76dp"
+        android:text="A Yom"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/botonhebreo"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/botontransliteral"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/botonmarron3"
+        android:onClick="seleccionahebreo"
+        android:text="@string/hebreo"
+        android:textColor="#FFEB3B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechahoyview" />
+
+    <Button
+        android:id="@+id/botontransliteral"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/botonhebreo"
+        android:layout_alignLeft="@+id/botonhebreo"
+        android:layout_centerVertical="true"
+        android:background="@drawable/botonmarron3"
+        android:onClick="seleccionatransliteral"
+        android:text="Transliteral"
+        android:textColor="#FFEB3B"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/botonhebreo"
+        app:layout_constraintStart_toStartOf="@+id/botonhebreo"
+        app:layout_constraintTop_toBottomOf="@+id/botonhebreo" />
+
+</android.support.constraint.ConstraintLayout>

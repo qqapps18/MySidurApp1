@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">Mi Sidur</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_selecion_rezo">Seleccione el Rezo</string>
+    <string name="title_activity_selecionahora">Rezos Para hoy</string>
+
+    <string name="open" translatable="false">open</string>
+    <string name="close" translatable="false">close</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="title_activity_leer_sidur">Lectura del Sidur</string>
+    <string name="title_activity_selecion_erev_shabat">Seleccion de Erev Shabat</string>
+    <string name="title_activity_seleccion_modo">Seleccione el Modo</string>
+    <string name="title_activity_hebrew_date_converter">Convertir de Fecha a Hebrea</string>
+    <string name="title_activity_selecciona_rezo_shajrit">Seleccione los Rezo de Shajrit</string>
+    <string name="title_activity_about" translatable="false">About</string>
+    <string name="acerca_about_app">Acerca App</string>
+    <string name="comparte_share_app">Comparte  App</string>
+    <string name="convertir_fecha_a_hebrea">Convertir Fecha a Hebrea</string>
+    <string name="la_hora_es">La Hora es:</string>
+    <string name="fecha_a_convertir">Fecha a Convertir</string>
+    <string name="fecha_convertida">Fecha Convertida</string>
+    <string name="seleccione_la_fecha">Seleccione la Fecha</string>
+    <string name="rezos_pendientes_de_hoy">Rezos Pendientes de Hoy</string>
+    <string name="estos_son_los_rezos_que_faltan_por_hoy">Estos son los Rezos que faltan por hoy</string>
+    <string name="bendicion_antes_de_viajar">Bendicion antes de Viajar  תפילת הדרך</string>
+    <string name="ben_viaje">Ben. Viaje תפילת הדרך Transliteral</string>
+    <string name="continuar">Continuar</string>
+    <string name="hebreo">Hebreo</string>
+    <string name="fon_tica_rabino_eitan_weisman">Fonética: Rabino Eitan Weisman</string>
+    <string name="todo_shajrit">TODO SHAJRIT שחרית</string>
+    <string name="bencici_n_tallit">Bendición Tallit ברכת טלית</string>
+    <string name="bencici_n_tefillin">Bencición Tefillin ברכות תפילין</string>
+    <string name="rezos_de_hoy">Rezos de Hoy</string>
+    <string name="todos_los_rezos">Todos Los Rezos</string>
+    <string name="title">SIDUR PARA TODOS LOS DIAS (V1.0.0)</string>
+    <string name="about1">Este es un sidur fácil de usar, con los rezos de todos los días y acceso rápido a los que normalmente buscamos.</string>
+    <string name="about2">Esta aplicación fue desarrollada Sami Pesate</string>
+    <string name="seleccion_de_rezo">SELECCION DE REZO</string>
+    <string name="happyjanuca">FELIZ JANUCA</string>
+    <string name="roshhashana">SHANA TOVA</string>
+    <string name="tzomGedalia">AYUNO de GEDALIA</string>
+    <string name="yomkipur">YOM KIPUR</string>
+    <string name="sukkot">SUCOT</string>
+    <string name="sinchattorah">SIMJAT TORA</string>
+    <string name="tzom10Tevet">AYUNO 10 de TEVET</string>
+    <string name="tubishvat">TU BISHVAT</string>
+    <string name="purimkatan">PURIM KATAN</string>
+    <string name="sushanpurimkatan">SHUSHAN PURIM KATAN</string>
+    <string name="tzomEsther">AYUNO DE ESTHER</string>
+    <string name="purim">PURIM</string>
+    <string name="sushanpurim">SHUSHAN PURIM</string>
+    <string name="pesaje1seder">PESAJ / 1er SEDER</string>
+    <string name="pesaj">PESAJ</string>
+    <string name="pesaj2seder">PESAJ / 2nd SEDER / OMER DIA 1</string>
+    <string name="pesaj1omer">PESAJ / OMER DIA 1</string>
+    <string name="pesaj2omer">PESAJ / OMER DIA 2</string>
+    <string name="pesaj3omer">PESAJ / OMER DIA 3</string>
+    <string name="pesaj4omer">PESAJ / OMER DIA 4</string>
+    <string name="pesaj5omer">PESAJ / OMER DIA 5</string>
+    <string name="pesaj6omer">PESAJ / OMER DIA 6</string>
+    <string name="pesaj7omer">PESAJ / OMER DIA 7</string>
+    <string name="pesaj8omer">PESAJ / OMER DIA 8</string>
+    <string name="pesaj9omer">OMER DIA 9</string>
+    <string name="pesaj10omer">OMER DIA 10</string>
+    <string name="pesaj11omer">OMER DIA 11</string>
+    <string name="pesaj12omer">OMER DIA 12</string>
+    <string name="pesaj13omer">OMER DIA 13</string>
+    <string name="pesaj14omer">OMER DIA 14</string>
+    <string name="pesaj15omer">OMER DIA 15</string>
+    <string name="pesaj16omer">OMER DIA 16</string>
+    <string name="pesaj17omer">OMER DIA 17</string>
+    <string name="pesaj18omer">OMER DIA 18</string>
+    <string name="pesaj19omer">OMER DIA 19</string>
+    <string name="pesaj20omer">OMER DIA 20</string>
+    <string name="pesaj21omer">OMER DIA 21</string>
+    <string name="pesaj22omer">OMER DIA 22</string>
+    <string name="pesaj23omer">OMER DIA 23</string>
+    <string name="pesaj24omer">OMER DIA 24</string>
+    <string name="pesaj25omer">OMER DIA 25</string>
+    <string name="pesaj26omer">OMER DIA 26</string>
+    <string name="pesaj27omer">OMER DIA 27</string>
+    <string name="pesaj28omer">OMER DIA 28</string>
+    <string name="pesaj29omer">OMER DIA 29</string>
+    <string name="pesaj30omer">OMER DIA 30</string>
+    <string name="pesaj31omer">OMER DIA 31</string>
+    <string name="pesaj32omer">OMER DIA 32</string>
+    <string name="pesaj33omer">LAG BAOMER / OMER DIA 33</string>
+    <string name="pesaj34omer">OMER DIA 34</string>
+    <string name="pesaj35omer">OMER DIA 35</string>
+    <string name="pesaj36omer">OMER DIA 36</string>
+    <string name="pesaj37omer">OMER DIA 37</string>
+    <string name="pesaj38omer">OMER DIA 38</string>
+    <string name="pesaj39omer">OMER DIA 39</string>
+    <string name="pesaj40omer">OMER DIA 40</string>
+    <string name="pesaj41omer">OMER DIA 41</string>
+    <string name="pesaj42omer">OMER DIA 42</string>
+    <string name="pesaj43omer">OMER DIA 43</string>
+    <string name="pesaj44omer">OMER DIA 44</string>
+    <string name="pesaj45omer">OMER DIA 45</string>
+    <string name="pesaj46omer">OMER DIA 46</string>
+    <string name="pesaj47omer">OMER DIA 47</string>
+    <string name="pesaj48omer">OMER DIA 48</string>
+    <string name="pesaj49omer">OMER DIA 49</string>
+    <string name="shavuot">SHAVUOT</string>
+    <string name="tzom17tamuz">AYUNO 17 DE TAMUZ</string>
+    <string name="tzom9Beav">AYUNO DEL 9 DE AV</string>
+    <string name="hoshanaraba">HOSHANA RABA</string>
+    <string name="sheminiatzeret">SHEMINI ATZERET</string>
+    <string name="gah">Gregoriano a Hebreo</string>
+    <string name="hag">Hebreo a Gregoriano</string>
+    <string name="fhebrew">Fecha en Hebreo</string>
+    <string name="fgregorian">Fecha Gregoriana</string>
+
+</resources>

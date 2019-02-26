@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/colordefondo"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.samipc.mysidurapp1.app.example.samipc.mysidurapp1.HebrewDateConverter"
+    tools:showIn="@layout/activity_hebrew_date_converter">
+
+    <TextView
+        android:id="@+id/textPicDate"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/botonmarron3"
+        android:text="@string/seleccione_la_fecha"
+        android:textAlignment="center"
+        android:textColor="#FFEB3B"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="163dp"
+        android:layout_height="71dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="48dp"
+        android:layout_toEndOf="@+id/monthPicker"
+        android:text=""
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/monthPicker"
+        app:layout_constraintEnd_toStartOf="@+id/tv2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="163dp"
+        android:layout_height="71dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="48dp"
+        android:layout_toEndOf="@+id/monthPicker"
+        android:text=""
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/monthPicker"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/dayPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/monthPicker"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="72dp"
+        android:background="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/monthPicker"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gh"
+        app:layout_constraintVertical_bias="1.0">
+
+    </NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/monthPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="72dp"
+        android:background="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </NumberPicker>
+
+    <NumberPicker
+        android:id="@+id/yearPicker"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="72dp"
+        android:background="#FFEB3B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.597"
+        app:layout_constraintStart_toEndOf="@+id/monthPicker"
+        app:layout_constraintTop_toBottomOf="@+id/hg"
+        app:layout_constraintVertical_bias="1.0">
+
+    </NumberPicker>
+
+    <Switch
+        android:id="@+id/sconvert"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:theme="@style/SwitchTheme"
+        app:layout_constraintBottom_toTopOf="@+id/tv"
+        app:layout_constraintEnd_toEndOf="@+id/textPicDate"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/textPicDate"
+        app:layout_constraintTop_toBottomOf="@+id/textPicDate"
+        app:layout_constraintVertical_bias="0.404" />
+
+    <TextView
+        android:id="@+id/gh"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_alignBottom="@+id/sconvert"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="18dp"
+        android:text="@string/gah"
+        android:textColor="#4E342E"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/sconvert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPicDate" />
+
+    <TextView
+        android:id="@+id/hg"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_alignBottom="@+id/sconvert"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18dp"
+        android:textColor="#4E342E"
+        android:textStyle="bold"
+        android:text="@string/hag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sconvert"
+        app:layout_constraintTop_toBottomOf="@+id/textPicDate" />
+
+
+    <!--    <TextView
+            android:id="@+id/textPicDate"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/botonmarron3"
+            android:text="@string/seleccione_la_fecha"
+            android:textAlignment="center"
+            android:textColor="#FFEB3B"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/dateRequestLayout"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/framedateconverted2">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/fecha_a_convertir"
+                android:textColor="#FFEB3B"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dateToConvertView"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="175dp"
+                android:text="Fecha a Convertir"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="277dp"
+                tools:layout_editor_absoluteY="183dp" />
+
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/dateCovertLayout"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/framedateconverted2">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="30dp"
+                android:text="@string/fecha_convertida"
+                android:textAlignment="center"
+                android:textColor="#FFEB3B"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hebrewDateYurzaitView"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="180dp"
+                android:text="Fecha Hebrea "
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="277dp"
+                tools:layout_editor_absoluteY="183dp" />
+
+
+        </RelativeLayout>
+    -->
+
+
+</android.support.constraint.ConstraintLayout>

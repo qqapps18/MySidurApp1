@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/masopciones"
+        android:title="Adicional  נוסף"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/kadishAlIsrael"
+        android:orderInCategory="100"
+        android:title="Kadish Al Israel  קדיש על ישראל"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/kadishYatom"
+        android:orderInCategory="100"
+        android:title="Kadish Yatom  קדיש יתום"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/kidushsahabat"
+        android:orderInCategory="100"
+        android:title="Kidush Shabat קידוש שבת"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/kidushsahabttrnas"
+        android:orderInCategory="100"
+        android:title="Kidush Shabat קידוש שבת Transliteral"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/convertdate"
+        android:orderInCategory="100"
+        android:title="@string/convertir_fecha_a_hebrea"
+        app:showAsAction="never" />
+
+</menu>
