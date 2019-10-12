@@ -28,9 +28,9 @@
     <string name="bencici_n_tefillin">Tefillin Blessing  ברכות תפילין</string>
     <string name="rezos_de_hoy">Today\'s Prayers</string>
     <string name="todos_los_rezos">All prayers</string>
-    <string name="title">" SIDUR FOR EVERYDAY (V1.0.0)"</string>
+    <string name="title">" SIDUR FOR EVERYDAY (V1.7.0)"</string>
     <string name="about2">This application was developed Sami Pesate</string>
-    <string name="about1">This is an easy-to-use siddur, with daily prayers and quick access to those we normally seek</string>
+    <string name="about1">" In this version you will find two great improvements: 1- The conversion of dates can now go from Hebrew to Gregorian and vice versa. 2- The Siddur will indicate to you what fectivity or fasting we are celebrating / observing. We do everything possible to make it easy to follow the important days"</string>
     <string name="seleccion_de_rezo">SELECTION OF PRAYER</string>
     <string name="happyjanuca">HAPPY JANUCA</string>
     <string name="roshhashana">SHANA TOVA</string>

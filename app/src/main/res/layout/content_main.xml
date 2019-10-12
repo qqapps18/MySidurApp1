@@ -22,7 +22,7 @@
         android:layout_marginBottom="103dp"
         android:text=" Nusaj Sefarad נוסח ספרד"
         android:textColor="#6D4C41"
-        android:textSize="15dp"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

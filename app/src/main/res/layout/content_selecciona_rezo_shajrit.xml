@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_selecciona_rezo_shajrit">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/sidurImage"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignParentTop="true"
@@ -162,7 +162,7 @@
         android:id="@+id/verhora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/sidurImage"
         android:layout_alignStart="@+id/botonshajrit"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
@@ -174,13 +174,13 @@
         app:layout_constraintEnd_toStartOf="@+id/yomview"
         app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/sidurImage" />
 
     <TextView
         android:id="@+id/yomview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/sidurImage"
         android:layout_alignEnd="@+id/botonshajrit"
         android:layout_alignRight="@+id/botonshajrit"
         android:layout_marginTop="8dp"
@@ -190,6 +190,6 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/sidurImage" />
 
 </android.support.constraint.ConstraintLayout>

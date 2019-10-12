@@ -34,8 +34,8 @@
     <string name="bencici_n_tefillin">Bencición Tefillin ברכות תפילין</string>
     <string name="rezos_de_hoy">Rezos de Hoy</string>
     <string name="todos_los_rezos">Todos Los Rezos</string>
-    <string name="title">SIDUR PARA TODOS LOS DIAS (V1.0.0)</string>
-    <string name="about1">Este es un sidur fácil de usar, con los rezos de todos los días y acceso rápido a los que normalmente buscamos.</string>
+    <string name="title">SIDUR PARA TODOS LOS DIAS (V1.7.0)</string>
+    <string name="about1">En esta versión encontrarás dos grandes mejoras: 1- La conversión de fechas ahora puede ir del hebreo al gregoriano y viceversa. 2- El Siddur le indicará qué actividad o ayuno estamos celebrando / observando. Hacemos todo lo posible para que sea fácil seguir los días importantes.</string>
     <string name="about2">Esta aplicación fue desarrollada Sami Pesate</string>
     <string name="seleccion_de_rezo">SELECCION DE REZO</string>
     <string name="happyjanuca">FELIZ JANUCA</string>

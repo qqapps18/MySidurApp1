@@ -83,7 +83,8 @@ public class SelecionRezo extends AppCompatActivity {
         intTime = Integer.parseInt(time);
 
         mes = mes + 1;
-        fechahoyview.setText(dia + "/"+ mes+ "/"+ año);
+        String fechahoyviewtxt = dia + "/"+ mes+ "/"+ año;
+        fechahoyview.setText(fechahoyviewtxt);
 
         HebrewDate date = new HebrewDate();
         yomview.setText(date.getHebrewDateAsString());
