@@ -112,5 +112,17 @@
     <string name="hag">Hebreo a Gregoriano</string>
     <string name="fhebrew">Fecha en Hebreo</string>
     <string name="fgregorian">Fecha Gregoriana</string>
+    <string name="tzomshabat1">HOY ES SHABAT,</string>
+    <string name="gedaliashabat">EL AYUDO DE GEDALIA</string>
+    <string name="tzomshabat2">SE MUEVE PARA MAÑANA</string>
+    <string name="tevet10shabat">EL AYUNO 10 DE TEVET</string>
+    <string name="tzomesthershabat">EL AYUNO DE ESTHER</string>
+    <string name="tzomesthershabatadarii">FUE EL 11 DE ADAR II</string>
+    <string name="tzomesthershabatadar">FUE EL 11 DE ADAR</string>
+    <string name="tzomestheron11adarii">EL 13 DE ADAR II SERA SHABAT</string>
+    <string name="tzomestheron11adar">EL 13 DE ADAR SERA SHABAT</string>
+    <string name="tzom17tamuzshabat">EL 17 DE TAMUZ</string>
+    <string name="tzom9beavshabat2">COMIENZA ESTA NOCHE</string>
+    <string name="tzom9beavshabat">EL AYUNO 9 DE AV</string>
 
 </resources>

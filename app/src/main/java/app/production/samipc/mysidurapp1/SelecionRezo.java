@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import app.production.samipc.mysidurapp1.HebrewDate.HebrewDate;
 import hotchemi.android.rate.AppRate;
@@ -24,6 +25,7 @@ public class SelecionRezo extends AppCompatActivity {
     private int dia;
     private int mes;
     private int año;
+    private int day_of_the_week;
     private String jodesh;
     private int yom;
     private int shana;
@@ -43,6 +45,7 @@ public class SelecionRezo extends AppCompatActivity {
     private int intTime;
     private int isHoliday;
     private Boolean isLeapYear;
+    private int istzomesther;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,7 @@ public class SelecionRezo extends AppCompatActivity {
         dia = calendar.get(Calendar.DAY_OF_MONTH);
         mes = calendar.get(Calendar.MONTH);
         año = calendar.get(Calendar.YEAR);
+        day_of_the_week = calendar.get(Calendar.DAY_OF_WEEK);
 
         SimpleDateFormat hora = new SimpleDateFormat("kk");
         String time = hora.format(calendar.getTime());
@@ -142,10 +146,26 @@ public class SelecionRezo extends AppCompatActivity {
     private void checkTzomGedalia() {
         if (jodesh == "Tishrei") {
             if (yom == 3 && (intTime > 5 && intTime < 19)) {
-                yomholiday.setText(getString(R.string.tzomGedalia));
-                todayIsTzom();
-            } else if (isHoliday == 0) {
-                todayIsNotHoliday();
+                if (day_of_the_week == 7) {
+                    yomholiday.setText(getString(R.string.tzomshabat1) + "\n" + getString(R.string.gedaliashabat) +"\n" + getString(R.string.tzomshabat2));
+                    todayIsTzom();
+                } else {
+                    yomholiday.setText(getString(R.string.tzomGedalia));
+                    todayIsTzom();
+                }
+            }
+            if (jodesh == "Tishrei") {
+                if (yom == 4 && (intTime > 5 && intTime < 19)) {
+                    if (day_of_the_week == 1) {
+                        {
+                            yomholiday.setText(getString(R.string.tzomGedalia));
+                            todayIsTzom();
+                        }
+                    }
+                    if (isHoliday == 0) {
+                        todayIsNotHoliday();
+                    }
+                }
             }
         }
     }
@@ -155,6 +175,8 @@ public class SelecionRezo extends AppCompatActivity {
             if ((yom == 9 && intTime > 17)|| (yom == 10 && intTime < 19)) {
                 yomholiday.setText(getString(R.string.yomkipur));
                 todayIsTzom();
+
+
             } else if (isHoliday == 0) {
                 todayIsNotHoliday();
             }
@@ -273,8 +295,21 @@ public class SelecionRezo extends AppCompatActivity {
     private void check10Tevet() {
         if (jodesh == "Tevet") {
             if (yom == 10 && (intTime > 5 && intTime < 19)) {
-                yomholiday.setText(getString(R.string.tzom10Tevet));
-                todayIsTzom();
+                if (day_of_the_week == 7) {
+                    yomholiday.setText(getString(R.string.tzomshabat1) + "\n" + getString(R.string.tevet10shabat) + "\n" + getString(R.string.tzomshabat2));
+                    todayIsTzom();
+                } else {
+                    yomholiday.setText(getString(R.string.tzom10Tevet));
+                    todayIsTzom();
+                }
+            } else if (jodesh == "Tevet") {
+                if (yom == 11 && (intTime > 5 && intTime < 19)) {
+                    if (day_of_the_week == 1) {
+                        yomholiday.setText(getString(R.string.tzom10Tevet));
+                        todayIsTzom();
+                    }
+                }
+
             } else if (isHoliday == 0) {
                 todayIsNotHoliday();
             }
@@ -313,38 +348,73 @@ public class SelecionRezo extends AppCompatActivity {
 
         if (isLeapYear) {
             if (jodesh == "Adar II") {
-                if (yom == 13) {
-                    yomholiday.setText(getString(R.string.tzomEsther));
-                    todayIsTzom();
-                } else if (yom == 14) {
-                    imageHoliday.setImageResource(R.drawable.purimnormal);
-                    yomholiday.setText(getString(R.string.purim));
-                    todayIsHoliday();
-                } else if (yom == 15) {
-                    imageHoliday.setImageResource(R.drawable.purimnormal);
-                    yomholiday.setText(getString(R.string.sushanpurim));
-                    todayIsHoliday();
-                } else if (isHoliday == 0) {
-                    todayIsNotHoliday();
+
+                todayTzomEsther();
+
+                if (istzomesther == 0) {
+
+                    if (yom == 13 && (intTime > 5 && intTime < 19)) {
+                        yomholiday.setText(getString(R.string.tzomEsther));
+                        todayIsTzom();
+                    } else if (yom == 14) {
+                        imageHoliday.setImageResource(R.drawable.purimnormal);
+                        yomholiday.setText(getString(R.string.purim));
+                        todayIsHoliday();
+                    } else if (yom == 15) {
+                        imageHoliday.setImageResource(R.drawable.purimnormal);
+                        yomholiday.setText(getString(R.string.sushanpurim));
+                        todayIsHoliday();
+                    } else if (isHoliday == 0) {
+                        todayIsNotHoliday();
+                    }
+
+                } else  if (istzomesther == 1) {
+
+                    if (yom == 13 && (intTime > 5 && intTime < 19)) {
+                        if (day_of_the_week == 7) {
+                            yomholiday.setText((getString(R.string.tzomshabat1) + "\n" +
+                                    getString(R.string.tzomesthershabat) + "\n" + getString(R.string.tzomesthershabatadarii)));
+                            todayIsTzom();
+                            istzomesther = 0;
+                        }
+                    }
                 }
             }
         }
 
+
         if(!isLeapYear) {
             if (jodesh == "Adar") {
-                if (yom == 13) {
-                    yomholiday.setText(getString(R.string.tzomEsther));
-                    todayIsTzom();
-                } else if (yom == 14) {
-                    imageHoliday.setImageResource(R.drawable.purimnormal);
-                    yomholiday.setText(getString(R.string.purim));
-                    todayIsHoliday();
-                } else if (yom == 15) {
-                    imageHoliday.setImageResource(R.drawable.purimnormal);
-                    yomholiday.setText(getString(R.string.sushanpurim));
-                    todayIsHoliday();
-                } else if (isHoliday == 0) {
-                    todayIsNotHoliday();
+
+                todayTzomEsther();
+
+                if (istzomesther == 0) {
+
+                    if (yom == 13 && (intTime > 5 && intTime < 19)) {
+                        yomholiday.setText(getString(R.string.tzomEsther));
+                        todayIsTzom();
+                    } else if (yom == 14) {
+                        imageHoliday.setImageResource(R.drawable.purimnormal);
+                        yomholiday.setText(getString(R.string.purim));
+                        todayIsHoliday();
+                    } else if (yom == 15) {
+                        imageHoliday.setImageResource(R.drawable.purimnormal);
+                        yomholiday.setText(getString(R.string.sushanpurim));
+                        todayIsHoliday();
+                    } else if (isHoliday == 0) {
+                        todayIsNotHoliday();
+                    }
+                }
+                if (istzomesther == 1) {
+
+                    if (yom == 13 && (intTime > 5 && intTime < 19)) {
+                        if (day_of_the_week == 7) {
+                            yomholiday.setText((getString(R.string.tzomshabat1) + "\n" +
+                                    getString(R.string.tzomesthershabat) + "\n" + getString(R.string.tzomesthershabatadar)));
+                            todayIsTzom();
+                            istzomesther = 0;
+                        }
+                    }
                 }
             }
         }
@@ -704,20 +774,47 @@ public class SelecionRezo extends AppCompatActivity {
     private void check17Tamuz() {
         if (jodesh == "Tamuz") {
             if (yom == 17 && (intTime > 5 && intTime < 19)) {
-                yomholiday.setText(getString(R.string.tzom17tamuz));
-                todayIsTzom();
+                if (day_of_the_week == 7) {
+                    yomholiday.setText(getString(R.string.tzomshabat1) + "\n" + getString(R.string.tzom17tamuzshabat) + "\n" + getString(R.string.tzomshabat2));
+                    todayIsTzom();
+                } else {
+                    yomholiday.setText(getString(R.string.tzom17tamuz));
+                    todayIsTzom();
+                }
+                } else if (jodesh == "Tamuz") {
+                if (yom == 18 && (intTime > 5 && intTime < 19)) {
+                    if (day_of_the_week == 1) {
+                        yomholiday.setText(getString(R.string.tzom17tamuz));
+                        todayIsTzom();
+                    }
+                }
             } else if (isHoliday == 0) {
-                todayIsNotHoliday();
+                    todayIsNotHoliday();
+                }
             }
-        }
     }
+
 
     public void check9Beav() {
         if (jodesh == "Av") {
             if ((yom == 8 && intTime > 17)|| (yom == 9 && intTime < 19)) {
+                if (yom == 8 && day_of_the_week == 6  && intTime > 17) {
+                    yomholiday.setText(getString(R.string.tzomshabat1) + "\n" +
+                            getString(R.string.tzom9beavshabat) + "\n" + getString(R.string.tzomshabat2));
+                    todayIsTzom();
+                } else if (yom == 9 && day_of_the_week == 7  && intTime < 19) {
+                    yomholiday.setText((getString(R.string.tzomshabat1) + "\n" +
+                            getString(R.string.tzom9beavshabat) + "\n" + getString(R.string.tzom9beavshabat2)));
+                    todayIsTzom();
+                } else
+                    yomholiday.setText(getString(R.string.tzom9Beav));
+                    todayIsTzom();
+            } else if ((yom == 9 && day_of_the_week == 7 && intTime > 17) ||
+                    (yom == 10 &&day_of_the_week == 1 && intTime < 19)) {
                 yomholiday.setText(getString(R.string.tzom9Beav));
                 todayIsTzom();
-            } else if (isHoliday == 0) {
+            } else
+                if (isHoliday == 0) {
                 todayIsNotHoliday();
             }
         }
@@ -741,6 +838,34 @@ public class SelecionRezo extends AppCompatActivity {
         imageHoliday.setVisibility(View.INVISIBLE);
     }
 
+    private void todayTzomEsther () {
+
+        if (isLeapYear) {
+            if (jodesh == "Adar II") {
+
+                if (yom == 11 && day_of_the_week == 5 && (intTime > 5 && intTime < 19)) {
+                    yomholiday.setText((getString(R.string.tzomEsther) + "\n" + getString(R.string.tzomestheron11adarii)));
+                    todayIsTzom();
+                    istzomesther = 1;
+                } else if (yom == 13 && day_of_the_week == 7 && (intTime > 5 && intTime < 19)) {
+                    istzomesther = 1;
+                }
+            }
+        }
+
+        if (!isLeapYear) {
+            if (jodesh == "Adar") {
+
+                if (yom == 11 && day_of_the_week == 5 && (intTime > 5 && intTime < 19)) {
+                    yomholiday.setText((getString(R.string.tzomEsther) + "\n" + getString(R.string.tzomestheron11adar)));
+                    todayIsTzom();
+                    istzomesther = 1;
+                } else if (yom == 13 && day_of_the_week == 7 && (intTime > 5 && intTime < 19)) {
+                    istzomesther = 1;
+                }
+            }
+        }
+    }
 
 
 

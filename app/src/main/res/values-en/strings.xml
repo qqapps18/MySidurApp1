@@ -106,4 +106,16 @@
     <string name="hag">Hebrew to Gregorian</string>
     <string name="fhebrew">Hebrew Date</string>
     <string name="fgregorian">Gregorian Date</string>
+    <string name="tzomshabat2">MOVES FOR TOMORROW</string>
+    <string name="tzomshabat1">TODAY IS SHABBAT</string>
+    <string name="gedaliashabat">THE FAST OF GEDALIA</string>
+    <string name="tevet10shabat">THE FAST OF 10 OF TEVET</string>
+    <string name="tzomesthershabat">THE FAST OF ESTHER</string>
+    <string name="tzomesthershabatadar">WAS THE 11 OF ADAR</string>
+    <string name="tzomestheron11adar">THE 13 OF ADAR WILL BE SHABBAT</string>
+    <string name="tzomestheron11adarii">THE 13 OF ADAR II WILL BE SHABBAT</string>
+    <string name="tzomesthershabatadarii">WAS THE 11 OF ADAR II</string>
+    <string name="tzom17tamuzshabat">THE FAST OF 17 OF TAMUZ</string>
+    <string name="tzom9beavshabat2">BEGINS THIS NIGHT</string>
+    <string name="tzom9beavshabat">THE FAST 9 0F AV</string>
 </resources>
