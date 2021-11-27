@@ -1,6 +1,7 @@
 package app.production.samipc.mysidurapp1;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -71,12 +72,21 @@ public class SelecionRezo extends AppCompatActivity {
         yomview = findViewById(R.id.yomview);
         imageHoliday = findViewById(R.id.imageHoliday);
         yomholiday = findViewById(R.id.yomholiday);
+        ImageView bookofblessings = findViewById(R.id.bookofblessings);
+
+        bookofblessings.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/developer?id=Sami+Pesate&hl=en&gl=US"));
+                startActivity(intent);
+            }
+        });
 
         isHoliday = 0;
         imageHoliday.setVisibility(View.INVISIBLE);
         yomholiday.setVisibility(View.INVISIBLE);
 
-        calendar= Calendar.getInstance();
+        calendar = Calendar.getInstance();
         dia = calendar.get(Calendar.DAY_OF_MONTH);
         mes = calendar.get(Calendar.MONTH);
         año = calendar.get(Calendar.YEAR);
@@ -87,14 +97,14 @@ public class SelecionRezo extends AppCompatActivity {
         intTime = Integer.parseInt(time);
 
         mes = mes + 1;
-        String fechahoyviewtxt = dia + "/"+ mes+ "/"+ año;
+        String fechahoyviewtxt = dia + "/" + mes + "/" + año;
         fechahoyview.setText(fechahoyviewtxt);
 
         HebrewDate date = new HebrewDate();
         yomview.setText(date.getHebrewDateAsString());
 
         yom = HebrewDate.CURRENT_HDAY;
-        jodesh =HebrewDate.CURRENT_HMONTH;
+        jodesh = HebrewDate.CURRENT_HMONTH;
         shana = HebrewDate.CURRENT_HYEAR;
         isLeapYear = HebrewDate.IS_LEAP_YEAR;
 
@@ -121,7 +131,7 @@ public class SelecionRezo extends AppCompatActivity {
 
     }
 
-   private void checkRoshHashana() {
+    private void checkRoshHashana() {
         if (jodesh == "Elul") {
             if (yom == 29 && intTime > 17) {
                 imageHoliday.setImageResource(R.drawable.roshhashana);
@@ -147,7 +157,7 @@ public class SelecionRezo extends AppCompatActivity {
         if (jodesh == "Tishrei") {
             if (yom == 3 && (intTime > 5 && intTime < 19)) {
                 if (day_of_the_week == 7) {
-                    yomholiday.setText(getString(R.string.tzomshabat1) + "\n" + getString(R.string.gedaliashabat) +"\n" + getString(R.string.tzomshabat2));
+                    yomholiday.setText(getString(R.string.tzomshabat1) + "\n" + getString(R.string.gedaliashabat) + "\n" + getString(R.string.tzomshabat2));
                     todayIsTzom();
                 } else {
                     yomholiday.setText(getString(R.string.tzomGedalia));
@@ -172,7 +182,7 @@ public class SelecionRezo extends AppCompatActivity {
 
     public void checkYomKipur() {
         if (jodesh == "Tishrei") {
-            if ((yom == 9 && intTime > 17)|| (yom == 10 && intTime < 19)) {
+            if ((yom == 9 && intTime > 17) || (yom == 10 && intTime < 19)) {
                 yomholiday.setText(getString(R.string.yomkipur));
                 todayIsTzom();
 
@@ -185,19 +195,19 @@ public class SelecionRezo extends AppCompatActivity {
 
     private void checksukkot() {
         if (jodesh == "Tishrei") {
-            if ((yom == 14 && intTime > 17)|| (yom > 14 && yom < 20) || (yom == 20 && intTime < 19)) {
+            if ((yom == 14 && intTime > 17) || (yom > 14 && yom < 20) || (yom == 20 && intTime < 19)) {
                 imageHoliday.setImageResource(R.drawable.sukkot);
                 yomholiday.setText(getString(R.string.sukkot));
                 todayIsHoliday();
-            }  else if ((yom == 20 && intTime > 17)|| (yom == 21 && intTime < 19)) {
+            } else if ((yom == 20 && intTime > 17) || (yom == 21 && intTime < 19)) {
                 imageHoliday.setImageResource(R.drawable.sukkot);
                 yomholiday.setText(getString(R.string.hoshanaraba));
                 todayIsHoliday();
-            } else if ((yom == 21 && intTime > 17)|| (yom == 22 && intTime < 19)) {
+            } else if ((yom == 21 && intTime > 17) || (yom == 22 && intTime < 19)) {
                 imageHoliday.setImageResource(R.drawable.sukkot);
                 yomholiday.setText(getString(R.string.sheminiatzeret));
                 todayIsHoliday();
-            } else if ((yom == 22 && intTime > 17)|| (yom > 23 && intTime < 19)) {
+            } else if ((yom == 22 && intTime > 17) || (yom > 23 && intTime < 19)) {
                 imageHoliday.setImageResource(R.drawable.sinchattorah);
                 yomholiday.setText(getString(R.string.sinchattorah));
                 todayIsHoliday();
@@ -234,11 +244,11 @@ public class SelecionRezo extends AppCompatActivity {
                 imageHoliday.setImageResource(R.drawable.januquilladia2);
                 yomholiday.setText(getString(R.string.happyjanuca));
                 todayIsHoliday();
-            }  else if ((yom == 26 && intTime > 17) || (yom == 27 && intTime < 18)) {
+            } else if ((yom == 26 && intTime > 17) || (yom == 27 && intTime < 18)) {
                 imageHoliday.setImageResource(R.drawable.januquilladia3);
                 yomholiday.setText(getString(R.string.happyjanuca));
                 todayIsHoliday();
-            }  else if ((yom == 27 && intTime > 17) || (yom == 28 && intTime < 18)) {
+            } else if ((yom == 27 && intTime > 17) || (yom == 28 && intTime < 18)) {
                 imageHoliday.setImageResource(R.drawable.januquilladia4);
                 yomholiday.setText(getString(R.string.happyjanuca));
                 todayIsHoliday();
@@ -246,11 +256,11 @@ public class SelecionRezo extends AppCompatActivity {
                 imageHoliday.setImageResource(R.drawable.januquilladia5);
                 yomholiday.setText(getString(R.string.happyjanuca));
                 todayIsHoliday();
-            } else if ((yom == 29 && intTime > 17) || (yom == 30  && intTime < 18)) {
+            } else if ((yom == 29 && intTime > 17) || (yom == 30 && intTime < 18)) {
                 imageHoliday.setImageResource(R.drawable.januquilladia6);
                 yomholiday.setText(getString(R.string.happyjanuca));
                 todayIsHoliday();
-            } else if (yom == 30  && intTime > 17) {
+            } else if (yom == 30 && intTime > 17) {
                 imageHoliday.setImageResource(R.drawable.januquilladia7);
                 yomholiday.setText(getString(R.string.happyjanuca));
                 todayIsHoliday();
@@ -368,7 +378,7 @@ public class SelecionRezo extends AppCompatActivity {
                         todayIsNotHoliday();
                     }
 
-                } else  if (istzomesther == 1) {
+                } else if (istzomesther == 1) {
 
                     if (yom == 13 && (intTime > 5 && intTime < 19)) {
                         if (day_of_the_week == 7) {
@@ -383,7 +393,7 @@ public class SelecionRezo extends AppCompatActivity {
         }
 
 
-        if(!isLeapYear) {
+        if (!isLeapYear) {
             if (jodesh == "Adar") {
 
                 todayTzomEsther();
@@ -426,7 +436,7 @@ public class SelecionRezo extends AppCompatActivity {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaje1seder));
                 todayIsHoliday();
-            } else   if (yom == 15 && intTime < 18) {
+            } else if (yom == 15 && intTime < 18) {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj));
                 todayIsHoliday();
@@ -450,7 +460,7 @@ public class SelecionRezo extends AppCompatActivity {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj3omer));
                 todayIsHoliday();
-            }else if (yom == 18 && intTime < 18) {
+            } else if (yom == 18 && intTime < 18) {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj3omer));
                 todayIsHoliday();
@@ -466,11 +476,11 @@ public class SelecionRezo extends AppCompatActivity {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj5omer));
                 todayIsHoliday();
-            } else if (yom == 20  && intTime < 18) {
+            } else if (yom == 20 && intTime < 18) {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj5omer));
                 todayIsHoliday();
-            } else if (yom == 20  && intTime > 17) {
+            } else if (yom == 20 && intTime > 17) {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj6omer));
                 todayIsHoliday();
@@ -482,11 +492,11 @@ public class SelecionRezo extends AppCompatActivity {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj7omer));
                 todayIsHoliday();
-            } else if (yom == 22  && intTime < 18) {
+            } else if (yom == 22 && intTime < 18) {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj7omer));
                 todayIsHoliday();
-            } else if (yom == 22  && intTime > 17) {
+            } else if (yom == 22 && intTime > 17) {
                 imageHoliday.setImageResource(R.drawable.pesaj);
                 yomholiday.setText(getString(R.string.pesaj8omer));
                 todayIsHoliday();
@@ -514,7 +524,7 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 25 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj11omer));
                 todayIsTzom();
-            }else if (yom == 26 && intTime < 18) {
+            } else if (yom == 26 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj11omer));
                 todayIsTzom();
             } else if (yom == 26 && intTime > 17) {
@@ -526,10 +536,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 27 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj13omer));
                 todayIsTzom();
-            } else if (yom == 28  && intTime < 18) {
+            } else if (yom == 28 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj13omer));
                 todayIsTzom();
-            } else if (yom == 28  && intTime > 17) {
+            } else if (yom == 28 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj14omer));
                 todayIsTzom();
             } else if (yom == 29 && intTime < 18) {
@@ -538,10 +548,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 29 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj15omer));
                 todayIsTzom();
-            } else if (yom == 30  && intTime < 18) {
+            } else if (yom == 30 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj15omer));
                 todayIsTzom();
-            } else if (yom == 30  && intTime > 17) {
+            } else if (yom == 30 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj16omer));
                 todayIsTzom();
             }
@@ -566,7 +576,7 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 3 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj19omer));
                 todayIsTzom();
-            }else if (yom == 4 && intTime < 18) {
+            } else if (yom == 4 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj19omer));
                 todayIsTzom();
             } else if (yom == 4 && intTime > 17) {
@@ -578,10 +588,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 5 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj21omer));
                 todayIsTzom();
-            } else if (yom == 6  && intTime < 18) {
+            } else if (yom == 6 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj21omer));
                 todayIsTzom();
-            } else if (yom == 6  && intTime > 17) {
+            } else if (yom == 6 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj22omer));
                 todayIsTzom();
             } else if (yom == 7 && intTime < 18) {
@@ -590,10 +600,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 7 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj23omer));
                 todayIsTzom();
-            } else if (yom == 8  && intTime < 18) {
+            } else if (yom == 8 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj23omer));
                 todayIsTzom();
-            } else if (yom == 8  && intTime > 17) {
+            } else if (yom == 8 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj24omer));
                 todayIsTzom();
             } else if (yom == 9 && intTime < 18) {
@@ -614,7 +624,7 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 11 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj27omer));
                 todayIsTzom();
-            }else if (yom == 12 && intTime < 18) {
+            } else if (yom == 12 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj27omer));
                 todayIsTzom();
             } else if (yom == 12 && intTime > 17) {
@@ -626,10 +636,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 13 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj29omer));
                 todayIsTzom();
-            } else if (yom == 14  && intTime < 18) {
+            } else if (yom == 14 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj29omer));
                 todayIsTzom();
-            } else if (yom == 14  && intTime > 17) {
+            } else if (yom == 14 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj30omer));
                 todayIsTzom();
             } else if (yom == 15 && intTime < 18) {
@@ -638,10 +648,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 15 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj31omer));
                 todayIsTzom();
-            } else if (yom == 16  && intTime < 18) {
+            } else if (yom == 16 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj31omer));
                 todayIsTzom();
-            } else if (yom == 16  && intTime > 17) {
+            } else if (yom == 16 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj32omer));
                 todayIsTzom();
             } else if (yom == 17 && intTime < 18) {
@@ -664,7 +674,7 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 19 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj35omer));
                 todayIsTzom();
-            }else if (yom == 20 && intTime < 18) {
+            } else if (yom == 20 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj35omer));
                 todayIsTzom();
             } else if (yom == 20 && intTime > 17) {
@@ -676,10 +686,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 21 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj37omer));
                 todayIsTzom();
-            } else if (yom == 22  && intTime < 18) {
+            } else if (yom == 22 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj37omer));
                 todayIsTzom();
-            } else if (yom == 22  && intTime > 17) {
+            } else if (yom == 22 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj38omer));
                 todayIsTzom();
             } else if (yom == 23 && intTime < 18) {
@@ -688,10 +698,10 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 23 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj39omer));
                 todayIsTzom();
-            } else if (yom == 24  && intTime < 18) {
+            } else if (yom == 24 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj39omer));
                 todayIsTzom();
-            } else if (yom == 24  && intTime > 17) {
+            } else if (yom == 24 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj40omer));
                 todayIsTzom();
             } else if (yom == 25 && intTime < 18) {
@@ -712,7 +722,7 @@ public class SelecionRezo extends AppCompatActivity {
             } else if (yom == 27 && intTime > 17) {
                 yomholiday.setText(getString(R.string.pesaj43omer));
                 todayIsTzom();
-            }else if (yom == 28 && intTime < 18) {
+            } else if (yom == 28 && intTime < 18) {
                 yomholiday.setText(getString(R.string.pesaj43omer));
                 todayIsTzom();
             } else if (yom == 28 && intTime > 17) {
@@ -761,7 +771,7 @@ public class SelecionRezo extends AppCompatActivity {
 
     private void checkShavuot() {
         if (jodesh == "Sivan") {
-            if ((yom == 5 && intTime > 17)|| yom == 6  || (yom == 7 && intTime < 18)) {
+            if ((yom == 5 && intTime > 17) || yom == 6 || (yom == 7 && intTime < 18)) {
                 imageHoliday.setImageResource(R.drawable.shavuot);
                 yomholiday.setText(getString(R.string.shavuot));
                 todayIsHoliday();
@@ -781,7 +791,7 @@ public class SelecionRezo extends AppCompatActivity {
                     yomholiday.setText(getString(R.string.tzom17tamuz));
                     todayIsTzom();
                 }
-                } else if (jodesh == "Tamuz") {
+            } else if (jodesh == "Tamuz") {
                 if (yom == 18 && (intTime > 5 && intTime < 19)) {
                     if (day_of_the_week == 1) {
                         yomholiday.setText(getString(R.string.tzom17tamuz));
@@ -789,32 +799,31 @@ public class SelecionRezo extends AppCompatActivity {
                     }
                 }
             } else if (isHoliday == 0) {
-                    todayIsNotHoliday();
-                }
+                todayIsNotHoliday();
             }
+        }
     }
 
 
     public void check9Beav() {
         if (jodesh == "Av") {
-            if ((yom == 8 && intTime > 17)|| (yom == 9 && intTime < 19)) {
-                if (yom == 8 && day_of_the_week == 6  && intTime > 17) {
+            if ((yom == 8 && intTime > 17) || (yom == 9 && intTime < 19)) {
+                if (yom == 8 && day_of_the_week == 6 && intTime > 17) {
                     yomholiday.setText(getString(R.string.tzomshabat1) + "\n" +
                             getString(R.string.tzom9beavshabat) + "\n" + getString(R.string.tzomshabat2));
                     todayIsTzom();
-                } else if (yom == 9 && day_of_the_week == 7  && intTime < 19) {
+                } else if (yom == 9 && day_of_the_week == 7 && intTime < 19) {
                     yomholiday.setText((getString(R.string.tzomshabat1) + "\n" +
                             getString(R.string.tzom9beavshabat) + "\n" + getString(R.string.tzom9beavshabat2)));
                     todayIsTzom();
                 } else
                     yomholiday.setText(getString(R.string.tzom9Beav));
-                    todayIsTzom();
+                todayIsTzom();
             } else if ((yom == 9 && day_of_the_week == 7 && intTime > 17) ||
-                    (yom == 10 &&day_of_the_week == 1 && intTime < 19)) {
+                    (yom == 10 && day_of_the_week == 1 && intTime < 19)) {
                 yomholiday.setText(getString(R.string.tzom9Beav));
                 todayIsTzom();
-            } else
-                if (isHoliday == 0) {
+            } else if (isHoliday == 0) {
                 todayIsNotHoliday();
             }
         }
@@ -838,7 +847,7 @@ public class SelecionRezo extends AppCompatActivity {
         imageHoliday.setVisibility(View.INVISIBLE);
     }
 
-    private void todayTzomEsther () {
+    private void todayTzomEsther() {
 
         if (isLeapYear) {
             if (jodesh == "Adar II") {
@@ -868,7 +877,6 @@ public class SelecionRezo extends AppCompatActivity {
     }
 
 
-
     private void checkprevday() {
         final DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
 
@@ -877,7 +885,7 @@ public class SelecionRezo extends AppCompatActivity {
 
         HebrewDate hebrewDateYurzait = new HebrewDate(diayurzait);
         prevyom = HebrewDate.CURRENT_HDAY;
-        prevjodesh =HebrewDate.CURRENT_HMONTH;
+        prevjodesh = HebrewDate.CURRENT_HMONTH;
         prevshana = HebrewDate.CURRENT_HYEAR;
     }
 
@@ -889,13 +897,12 @@ public class SelecionRezo extends AppCompatActivity {
 
         HebrewDate hebrewDateYurzait = new HebrewDate(diayurzait);
         antprevyom = HebrewDate.CURRENT_HDAY;
-        antprevjodesh =HebrewDate.CURRENT_HMONTH;
+        antprevjodesh = HebrewDate.CURRENT_HMONTH;
         antprevshana = HebrewDate.CURRENT_HYEAR;
     }
 
 
-    public void seleccionahora (View view)
-    {
+    public void seleccionahora(View view) {
         allprayes = 0;
 
         Intent intent = new Intent(this, Selecionahora.class);
@@ -904,8 +911,7 @@ public class SelecionRezo extends AppCompatActivity {
 
     }
 
-    public void seleccionatodo (View view)
-    {
+    public void seleccionatodo(View view) {
         allprayes = 1;
 
         Intent intent = new Intent(this, Selecionahora.class);
@@ -916,15 +922,15 @@ public class SelecionRezo extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-            Intent intent = new Intent(Intent.ACTION_MAIN);
-            intent.addCategory(Intent.CATEGORY_HOME);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-            System.exit(0);
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        System.exit(0);
         super.onBackPressed();
 
 
-        }
+    }
 
 }
